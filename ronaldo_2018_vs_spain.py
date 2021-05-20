@@ -48,7 +48,9 @@ for i,shot in shots.iterrows():
             shotCircle.set_alpha(0.4)
 
         ax.add_patch(shotCircle)
-
+non_p = mpatches.Patch(color='red', label='Non-penalty shot')
+penalty = mpatches.Patch(color='blue', label='Penalty')
+plt.legend(handles=[non_p,penalty],loc="lower left")
 plt.text(5,81,player+"'s shots")     
 fig.set_size_inches(10, 7)
 fig.savefig('Output/tweet_shots.pdf', dpi=100) 
